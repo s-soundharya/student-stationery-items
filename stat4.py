@@ -3,7 +3,6 @@ from tkinter import *
 from tkinter import messagebox
 from tkinter import ttk
 
-# Establish MySQL Connection
 try:
     mydb = mysql.connector.connect(
         host="localhost",
