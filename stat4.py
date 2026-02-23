@@ -112,7 +112,7 @@ def delete_item():
     else:
         messagebox.showerror("Error", "Item ID is required!")
 
-# Function to Display All Items
+
 def display_all_items():
     sql = "SELECT * FROM Items"
     mycursor.execute(sql)
@@ -127,7 +127,7 @@ def display_all_items():
     else:
         messagebox.showinfo("Info", "No items found.")
 
-# UI Elements
+
 Label(root, text="Item Name", bg="#ADD8E6").grid(row=1, column=0, padx=10, pady=5, sticky=E)
 name_entry = Entry(root)
 name_entry.grid(row=1, column=1, padx=10, pady=5)
@@ -146,7 +146,7 @@ stock_entry.grid(row=4, column=1, padx=10, pady=5)
 
 Button(root, text="Add Item", command=add_item, bg="lightgreen").grid(row=5, column=1, pady=5)
 
-# Update Item
+
 Label(root, text="Item ID (for Update)", bg="#ADD8E6").grid(row=6, column=0, padx=10, pady=5, sticky=E)
 update_item_id_entry = Entry(root)
 update_item_id_entry.grid(row=6, column=1, padx=10, pady=5)
@@ -169,17 +169,16 @@ update_stock_entry.grid(row=10, column=1, padx=10, pady=5)
 
 Button(root, text="Update Item", command=update_item, bg="lightpink").grid(row=11, column=1, pady=5)
 
-# Delete Item
+
 Label(root, text="Item ID (for Delete)", bg="#ADD8E6").grid(row=12, column=0, padx=10, pady=5, sticky=E)
 delete_item_id_entry = Entry(root)
 delete_item_id_entry.grid(row=12, column=1, padx=10, pady=5)
 
 Button(root, text="Delete Item", command=delete_item, bg="red").grid(row=13, column=1, pady=5)
 
-# Button to Display All Items
+
 Button(root, text="Display All Items", command=display_all_items, bg="grey").grid(row=14, column=1, pady=5)
 
-# Treeview to Display Items
 item_tree = ttk.Treeview(root, columns=("ID", "Name", "Category", "Price", "Stock"), show="headings", height=10)
 item_tree.grid(row=15, column=0, columnspan=2, pady=10)
 
